@@ -1,8 +1,6 @@
 package com.vickikbt.comix.data.model
 
 
-import com.google.gson.annotations.SerializedName
-
 data class Powerstats(
     val combat: Int,
     val durability: Int,
