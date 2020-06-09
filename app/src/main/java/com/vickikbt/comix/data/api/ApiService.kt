@@ -4,7 +4,7 @@ import com.vickikbt.comix.data.model.Characters
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface CharacterService {
+interface ApiService {
 
     @GET("all.json")
     suspend fun getCharacters():Response<Characters>

@@ -6,9 +6,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.liveData
 import com.vickikbt.comix.R
-import com.vickikbt.comix.data.api.CharacterService
+import com.vickikbt.comix.data.api.ApiService
 import com.vickikbt.comix.data.api.RetrofitInstance
 import com.vickikbt.comix.data.model.Characters
+import com.vickikbt.comix.ui.adapters.RecyclerviewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Response
 
@@ -17,9 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        loadData()
+    }
+
+    private fun loadData(){
         val retrofitService =
             RetrofitInstance.getRetrofitInstance()
-                .create(CharacterService::class.java)
+                .create(ApiService::class.java)
 
         val responseLiveData: LiveData<Response<Characters>> = liveData {
             val response = retrofitService.getCharacters()
@@ -27,19 +32,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         responseLiveData.observe(this, Observer {
-            val characterList = it.body()?.listIterator()
-            if (characterList != null) {
-                while (characterList.hasNext()) {
-                    val charactersList = characterList.next()
-                    val result = " " + "Name: ${charactersList.name}" + "\n" +
-                            " " + "Biography: ${charactersList.biography.fullName}" + "\n" +
-                            " " + "Appearance: ${charactersList.appearance.gender}" + "\n" +
-                            " " + "Powerstats: ${charactersList.powerstats.intelligence}" + "\n" +
-                            " \n"
+            val adapter=RecyclerviewAdapter(this, it.body()!!)
 
-                    textView_main.append(result)
-                }
-            }
+            main_recyclerView.adapter=adapter
         })
     }
 }
