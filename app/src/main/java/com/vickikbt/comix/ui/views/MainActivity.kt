@@ -2,6 +2,7 @@ package com.vickikbt.comix.ui.views
 
 import RecyclerViewAdapter
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -28,12 +29,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         responseLiveData.observe(this, Observer {
-            val characters = ArrayList<Characters>()
-            characters.add(it.body()!!)
+            val characters = arrayListOf<Characters>()
 
-            val adapter = RecyclerViewAdapter(this, characters)
-            adapter.notifyDataSetChanged()
-            main_recyclerView.adapter = adapter
+            for (i in 0..characters.size) {
+                characters.add(it.body()!!)
+                val adapter = RecyclerViewAdapter(this, characters)
+                adapter.notifyDataSetChanged()
+                main_recyclerView.adapter = adapter
+
+                Toast.makeText(applicationContext, characters.size.toString(), Toast.LENGTH_LONG)
+                    .show()
+            }
+
 
         })
     }
