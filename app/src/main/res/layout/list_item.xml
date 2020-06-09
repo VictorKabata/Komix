@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/characterCardView"
     android:layout_width="match_parent"
-    android:layout_height="230dp"
+    android:layout_height="210dp"
     android:layout_marginHorizontal="3dp"
     android:layout_marginVertical="5dp"
     android:clickable="true"
@@ -23,38 +23,21 @@
             android:layout_centerVertical="true"
             android:scaleType="centerCrop" />
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/textView_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/imageView_character"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
+            android:text="Dare devil"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView_aliase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center"
-                android:text="Dare devil"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView_rating"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="2dp"
-                android:fontFamily="@font/montserrat"
-                android:gravity="center"
-                android:text="Rating"
-                android:textColor="@android:color/black"
-                android:textSize="14sp" />
-
-        </LinearLayout>
 
     </RelativeLayout>
 

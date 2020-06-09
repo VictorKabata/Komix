@@ -2,6 +2,8 @@
   <dictionary name="Vicki">
     <words>
       <w>aliase</w>
+      <w>apikey</w>
+      <w>etag</w>
       <w>gson</w>
       <w>komix</w>
       <w>powerstats</w>
