@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.vickikbt.comix.R
 import com.vickikbt.comix.data.model.Characters
 
-class RecyclerViewAdapter (val context: Context, private val characters: List<Characters> = listOf()):RecyclerView.Adapter<MyViewHolder>(){
+class RecyclerViewAdapter (val context: Context,private val characters: List<Characters>):RecyclerView.Adapter<MyViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -21,7 +21,7 @@ class RecyclerViewAdapter (val context: Context, private val characters: List<Ch
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.tvName.text= characters[position].data.toString()
+        holder.tvName.text= characters[position].data.results[position].name
     }
 
 }

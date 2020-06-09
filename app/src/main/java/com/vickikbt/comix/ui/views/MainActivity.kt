@@ -28,10 +28,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         responseLiveData.observe(this, Observer {
-            val adapter=RecyclerViewAdapter(this)
-            main_recyclerView.adapter=adapter
+            val characters = ArrayList<Characters>()
+            characters.add(it.body()!!)
 
-            //textView_main.text = it.body()!!.data.results.size.toString()
+            val adapter = RecyclerViewAdapter(this, characters)
+            adapter.notifyDataSetChanged()
+            main_recyclerView.adapter = adapter
+
         })
     }
 }
