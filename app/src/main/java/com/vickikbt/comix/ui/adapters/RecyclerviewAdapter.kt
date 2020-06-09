@@ -25,9 +25,9 @@ class RecyclerviewAdapter(private val context: Context, private val characters: 
         val rating =
             (characters[position].powerstats.combat + characters[position].powerstats.intelligence + characters[position].powerstats.durability + characters[position].powerstats.power+characters[position].powerstats.speed+characters[position].powerstats.strength)/6
 
-        Glide.with(context).load(characters[position].images.sm).into(holder.ivCharacter)
+        Glide.with(context).load(characters[position].images.md).into(holder.ivCharacter)
         holder.tvName.text = characters[position].name
-        holder.tvAliase.text = characters[position].biography.fullName.toString()
+//        holder.tvAliase.text = characters[position].biography.fullName.toString()
         holder.tvRating.text = "Rating: $rating"
 
     }
@@ -36,10 +36,10 @@ class RecyclerviewAdapter(private val context: Context, private val characters: 
 }
 
 class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val ivCharacter = itemView.findViewById<ImageView>(R.id.imageView_character)
-    val tvAliase = itemView.findViewById<TextView>(R.id.textView_name)
-    val tvName = itemView.findViewById<TextView>(R.id.textView_aliase)
-    val tvRating = itemView.findViewById<TextView>(R.id.textView_rating)
+    val ivCharacter: ImageView = itemView.findViewById(R.id.imageView_character)
+//    val tvAliase = itemView.findViewById<TextView>(R.id.textView_name)
+    val tvName: TextView = itemView.findViewById(R.id.textView_aliase)
+    val tvRating: TextView = itemView.findViewById(R.id.textView_rating)
 
 }
 
