@@ -1,12 +1,10 @@
 package com.vickikbt.comix.ui.views
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.vickikbt.comix.R
-import com.vickikbt.comix.data.model.Characters
 import com.vickikbt.comix.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -24,16 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showData() {
         viewModel.myData.observe(this, Observer {
-
-            val characters = arrayListOf<Characters>()
-
-            for (i in it.body()!!.data.results.indices) {
-                 //Log.e("VickiKbt", i.toString())
-                //Log.e("VickiKbt", it.body().toString())
-                characters.add(i, it.body()!!)
-                Log.e("VickiKbt", characters.toString())
-            }
-
+            //Populate the recyclerview in MainActivity
         })
     }
 
