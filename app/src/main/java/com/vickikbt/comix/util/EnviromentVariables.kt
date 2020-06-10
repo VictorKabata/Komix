@@ -10,5 +10,7 @@ class EnviromentVariables {
         const val ts="1" //Timestamp
         const val publicKey = "3c7bb3089f0dda1cd39ce38b8c751566"
         const val hash = "5e5029686a565b82107f981de1fdd98e" //md5(ts+private_key+public_key)
+
+        const val TAG="VickiKbt"
     }
 }
