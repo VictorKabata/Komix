@@ -6,21 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.views.MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:scaleType="centerCrop"
-        android:visibility="gone" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="5dp"
         android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="2"

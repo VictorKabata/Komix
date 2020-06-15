@@ -13,7 +13,7 @@ class EnviromentVariables {
         const val limit=100
         const val offset=0
 
-        val variant = "/portrait_uncanny."
+        const val variant = "/portrait_fantastic."
 
         const val TAG="VickiKbt"
     }

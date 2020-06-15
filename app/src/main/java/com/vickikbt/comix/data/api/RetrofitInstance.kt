@@ -7,14 +7,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RetrofitInstance {
 
     companion object {
-        fun getRetrofitInstance(): Retrofit {
+        private fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }
 
-        val retrofitService = getRetrofitInstance().create(ApiService::class.java)
+        val retrofitService: ApiService = getRetrofitInstance().create(ApiService::class.java)
     }
 
 }

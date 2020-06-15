@@ -45,7 +45,7 @@ class RecyclerViewAdapter(val context: Context, private val characters: List<Cha
 }
 
 class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tvCharacter: TextView = itemView.findViewById(R.id.textView_character)
+    val tvCharacter: TextView = itemView.findViewById(R.id.textView_characterName)
     val ivCharacter: ImageView = itemView.findViewById(R.id.imageView_character)
 }
 

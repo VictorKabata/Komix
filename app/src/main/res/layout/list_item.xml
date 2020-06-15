@@ -1,46 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/characterCardView"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    android:layout_marginHorizontal="3dp"
-    android:layout_marginVertical="5dp"
-    android:clickable="true"
-    android:focusable="true"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="8dp">
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="4dp"
+    android:elevation="10dp"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="10dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView_character"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerVertical="true"
-            android:scaleType="centerCrop" />
-
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
         <TextView
-            android:id="@+id/textView_character"
+            android:id="@+id/textView_characterName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/imageView_character"
+            android:ellipsize="end"
             android:fontFamily="@font/montserrat"
-            android:gravity="center"
+            android:maxLines="1"
             android:text="Dare devil"
-            android:textAlignment="center"
-            android:textColor="@color/Black"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textStyle="bold" />
 
 
     </RelativeLayout>
-
 
 </androidx.cardview.widget.CardView>
 

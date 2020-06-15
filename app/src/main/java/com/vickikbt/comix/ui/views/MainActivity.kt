@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.vickikbt.comix.R
 import com.vickikbt.comix.data.model.Characters
-import com.vickikbt.comix.viewmodel.MainViewModel
+import com.vickikbt.comix.ui.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

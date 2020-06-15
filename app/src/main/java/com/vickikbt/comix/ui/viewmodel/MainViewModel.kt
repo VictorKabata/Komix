@@ -1,4 +1,4 @@
-package com.vickikbt.comix.viewmodel
+package com.vickikbt.comix.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
